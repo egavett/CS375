@@ -14,6 +14,16 @@
 		295FB67D1C83A6B30033D3A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295FB67B1C83A6B30033D3A4 /* LaunchScreen.storyboard */; };
 		295FB6881C83A6B30033D3A4 /* BattleshipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6871C83A6B30033D3A4 /* BattleshipTests.swift */; };
 		295FB6931C83A6B40033D3A4 /* BattleshipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6921C83A6B40033D3A4 /* BattleshipUITests.swift */; };
+		295FB6A11C83A8410033D3A4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6A01C83A8410033D3A4 /* MainMenuViewController.swift */; };
+		295FB6A31C83A9280033D3A4 /* SettingsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6A21C83A9280033D3A4 /* SettingsMenuViewController.swift */; };
+		295FB6A51C83B14F0033D3A4 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6A41C83B14F0033D3A4 /* FriendsListTableViewController.swift */; };
+		295FB6AA1C83B2810033D3A4 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6A81C83B2810033D3A4 /* FriendsListTableViewCell.swift */; };
+		295FB6AB1C83B2810033D3A4 /* FriendsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 295FB6A91C83B2810033D3A4 /* FriendsListTableViewCell.xib */; };
+		295FB6AD1C83B9920033D3A4 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6AC1C83B9920033D3A4 /* NewGameViewController.swift */; };
+		295FB6B11C83BAF30033D3A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6B01C83BAF30033D3A4 /* User.swift */; };
+		295FB6B31C83BD210033D3A4 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6B21C83BD210033D3A4 /* GridPoint.swift */; };
+		295FB6B51C83BE630033D3A4 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6B41C83BE630033D3A4 /* Grid.swift */; };
+		295FB6B71C83BFE40033D3A4 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6B61C83BFE40033D3A4 /* Ship.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,16 @@
 		295FB68E1C83A6B40033D3A4 /* BattleshipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BattleshipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		295FB6921C83A6B40033D3A4 /* BattleshipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleshipUITests.swift; sourceTree = "<group>"; };
 		295FB6941C83A6B40033D3A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		295FB6A01C83A8410033D3A4 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		295FB6A21C83A9280033D3A4 /* SettingsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenuViewController.swift; sourceTree = "<group>"; };
+		295FB6A41C83B14F0033D3A4 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
+		295FB6A81C83B2810033D3A4 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		295FB6A91C83B2810033D3A4 /* FriendsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsListTableViewCell.xib; sourceTree = "<group>"; };
+		295FB6AC1C83B9920033D3A4 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
+		295FB6B01C83BAF30033D3A4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		295FB6B21C83BD210033D3A4 /* GridPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPoint.swift; sourceTree = "<group>"; };
+		295FB6B41C83BE630033D3A4 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		295FB6B61C83BFE40033D3A4 /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +117,8 @@
 		295FB6711C83A6B30033D3A4 /* Battleship */ = {
 			isa = PBXGroup;
 			children = (
-				295FB6721C83A6B30033D3A4 /* AppDelegate.swift */,
-				295FB6741C83A6B30033D3A4 /* ViewController.swift */,
+				295FB6AF1C83BAA30033D3A4 /* Objects */,
+				295FB6AE1C83BA8A0033D3A4 /* User Interface */,
 				295FB6761C83A6B30033D3A4 /* Main.storyboard */,
 				295FB6791C83A6B30033D3A4 /* Assets.xcassets */,
 				295FB67B1C83A6B30033D3A4 /* LaunchScreen.storyboard */,
@@ -123,6 +143,32 @@
 				295FB6941C83A6B40033D3A4 /* Info.plist */,
 			);
 			path = BattleshipUITests;
+			sourceTree = "<group>";
+		};
+		295FB6AE1C83BA8A0033D3A4 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				295FB6721C83A6B30033D3A4 /* AppDelegate.swift */,
+				295FB6741C83A6B30033D3A4 /* ViewController.swift */,
+				295FB6A01C83A8410033D3A4 /* MainMenuViewController.swift */,
+				295FB6AC1C83B9920033D3A4 /* NewGameViewController.swift */,
+				295FB6A21C83A9280033D3A4 /* SettingsMenuViewController.swift */,
+				295FB6A41C83B14F0033D3A4 /* FriendsListTableViewController.swift */,
+				295FB6A81C83B2810033D3A4 /* FriendsListTableViewCell.swift */,
+				295FB6A91C83B2810033D3A4 /* FriendsListTableViewCell.xib */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		295FB6AF1C83BAA30033D3A4 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				295FB6B01C83BAF30033D3A4 /* User.swift */,
+				295FB6B21C83BD210033D3A4 /* GridPoint.swift */,
+				295FB6B41C83BE630033D3A4 /* Grid.swift */,
+				295FB6B61C83BFE40033D3A4 /* Ship.swift */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +278,7 @@
 				295FB67D1C83A6B30033D3A4 /* LaunchScreen.storyboard in Resources */,
 				295FB67A1C83A6B30033D3A4 /* Assets.xcassets in Resources */,
 				295FB6781C83A6B30033D3A4 /* Main.storyboard in Resources */,
+				295FB6AB1C83B2810033D3A4 /* FriendsListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +303,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295FB6B31C83BD210033D3A4 /* GridPoint.swift in Sources */,
+				295FB6A31C83A9280033D3A4 /* SettingsMenuViewController.swift in Sources */,
+				295FB6A11C83A8410033D3A4 /* MainMenuViewController.swift in Sources */,
+				295FB6B51C83BE630033D3A4 /* Grid.swift in Sources */,
+				295FB6AD1C83B9920033D3A4 /* NewGameViewController.swift in Sources */,
+				295FB6A51C83B14F0033D3A4 /* FriendsListTableViewController.swift in Sources */,
+				295FB6B71C83BFE40033D3A4 /* Ship.swift in Sources */,
+				295FB6B11C83BAF30033D3A4 /* User.swift in Sources */,
+				295FB6AA1C83B2810033D3A4 /* FriendsListTableViewCell.swift in Sources */,
 				295FB6751C83A6B30033D3A4 /* ViewController.swift in Sources */,
 				295FB6731C83A6B30033D3A4 /* AppDelegate.swift in Sources */,
 			);
