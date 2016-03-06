@@ -12,28 +12,43 @@ class FriendsListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.tableView.registerNib(UINib(nibName: "FriendsListTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
+        
+        self.navigationController?.toolbarHidden = false
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let toolbar = UIToolbar()
-        toolbar.frame = CGRectMake(0, self.view.frame.size.height - 46, self.view.frame.size.width, 46)
+        //let toolbar = UIToolbar()
         //toolbar.sizeToFit()
         
         let item1 = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: "addFriend")
-        let item2 = UIBarButtonItem(title: "Remove", style: .Plain, target: self, action: "removeFriend")
+        let item2 = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let item3 = UIBarButtonItem(title: "Remove", style: .Plain, target: self, action: "removeFriend")
         
-        toolbar.setItems([item1, item2], animated: true)
+        //toolbar.setItems([item1, item2, item3], animated: true)
         
-        //toolbar.setItems(toolbarButtons, animated: true)
-        toolbar.backgroundColor = UIColor.redColor()
-        self.view.addSubview(toolbar)
+       // toolbar.backgroundColor = UIColor.redColor()
+        //self.view.addSubview(toolbar)
+        self.navigationController?.toolbar.setItems([item1, item2, item3], animated: true)
+        
+        
+       // toolbar.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
+        //toolbar.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
+        //toolbar.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
+        
+       // toolbar.autoSetDimension(.Height, toSize: 44.0)
         
     }
-
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.toolbarHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,7 +63,7 @@ class FriendsListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
     }
     
     func addFriend(sender: AnyObject) {
@@ -60,19 +75,23 @@ class FriendsListTableViewController: UITableViewController {
         print("You just lost a friend...")
         // TODO - edit table to remove a friend
     }
-
     
-    
-    
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let cell: FriendsListTableViewCell?
+        
+        cell = (tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath) as! FriendsListTableViewCell)
+        
+        cell?.friendLabel.text = "Friend Name"
+        
+        cell?.challengeButton.addTarget(self, action: "sendChallenge", forControlEvents: .TouchUpInside)
+        
         // Configure the cell...
-
-        return cell
+        
+        
+        
+        return cell!
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

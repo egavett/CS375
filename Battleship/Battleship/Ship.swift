@@ -12,6 +12,7 @@ class Ship: NSObject {
     var front: GridPoint?
     var back: GridPoint?
     var health: Array<Bool> = [] /// Return false if the ship secton has NOT been attacked
+    var horizontal = false
     
     init(front: GridPoint, back:GridPoint, length: Int) {
         self.front = front

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2904E5D91C8CD368000FDCDD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904E5D81C8CD368000FDCDD /* GameViewController.swift */; };
+		2904E5E51C8CD4EA000FDCDD /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2904E5DD1C8CD4EA000FDCDD /* ALView+PureLayout.m */; };
+		2904E5E61C8CD4EA000FDCDD /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2904E5DF1C8CD4EA000FDCDD /* NSArray+PureLayout.m */; };
+		2904E5E71C8CD4EA000FDCDD /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2904E5E11C8CD4EA000FDCDD /* NSLayoutConstraint+PureLayout.m */; };
+		2904E5EA1C8CD60F000FDCDD /* GridSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904E5E91C8CD60F000FDCDD /* GridSquare.swift */; };
+		2904E5EC1C8CDC83000FDCDD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2904E5EB1C8CDC83000FDCDD /* GameScene.sks */; };
 		295FB6731C83A6B30033D3A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6721C83A6B30033D3A4 /* AppDelegate.swift */; };
 		295FB6751C83A6B30033D3A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB6741C83A6B30033D3A4 /* ViewController.swift */; };
 		295FB6781C83A6B30033D3A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295FB6761C83A6B30033D3A4 /* Main.storyboard */; };
@@ -44,6 +50,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2904E5D81C8CD368000FDCDD /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		2904E5DB1C8CD4E9000FDCDD /* Battleship-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Battleship-Bridging-Header.h"; sourceTree = "<group>"; };
+		2904E5DC1C8CD4EA000FDCDD /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		2904E5DD1C8CD4EA000FDCDD /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		2904E5DE1C8CD4EA000FDCDD /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		2904E5DF1C8CD4EA000FDCDD /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		2904E5E01C8CD4EA000FDCDD /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		2904E5E11C8CD4EA000FDCDD /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		2904E5E21C8CD4EA000FDCDD /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/PureLayout.h"; sourceTree = "<group>"; };
+		2904E5E31C8CD4EA000FDCDD /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		2904E5E41C8CD4EA000FDCDD /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = "../../../../../../Volumes/CS_Students/egavett18/CS375/PureLayout-master/PureLayout/PureLayout/PureLayoutDefines.h"; sourceTree = "<group>"; };
+		2904E5E91C8CD60F000FDCDD /* GridSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridSquare.swift; sourceTree = "<group>"; };
+		2904E5EB1C8CDC83000FDCDD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		295FB66F1C83A6B30033D3A4 /* Battleship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Battleship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		295FB6721C83A6B30033D3A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		295FB6741C83A6B30033D3A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +113,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2904E5DA1C8CD48B000FDCDD /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				2904E5DC1C8CD4EA000FDCDD /* ALView+PureLayout.h */,
+				2904E5DD1C8CD4EA000FDCDD /* ALView+PureLayout.m */,
+				2904E5DE1C8CD4EA000FDCDD /* NSArray+PureLayout.h */,
+				2904E5DF1C8CD4EA000FDCDD /* NSArray+PureLayout.m */,
+				2904E5E01C8CD4EA000FDCDD /* NSLayoutConstraint+PureLayout.h */,
+				2904E5E11C8CD4EA000FDCDD /* NSLayoutConstraint+PureLayout.m */,
+				2904E5E21C8CD4EA000FDCDD /* PureLayout.h */,
+				2904E5E31C8CD4EA000FDCDD /* PureLayout+Internal.h */,
+				2904E5E41C8CD4EA000FDCDD /* PureLayoutDefines.h */,
+				2904E5DB1C8CD4E9000FDCDD /* Battleship-Bridging-Header.h */,
+			);
+			name = PureLayout;
+			sourceTree = "<group>";
+		};
+		2904E5E81C8CD5E4000FDCDD /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				2904E5E91C8CD60F000FDCDD /* GridSquare.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
 		295FB6661C83A6B30033D3A4 = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +161,15 @@
 		295FB6711C83A6B30033D3A4 /* Battleship */ = {
 			isa = PBXGroup;
 			children = (
+				2904E5DA1C8CD48B000FDCDD /* PureLayout */,
 				295FB6AF1C83BAA30033D3A4 /* Objects */,
+				2904E5E81C8CD5E4000FDCDD /* Custom Views */,
 				295FB6AE1C83BA8A0033D3A4 /* User Interface */,
 				295FB6761C83A6B30033D3A4 /* Main.storyboard */,
 				295FB6791C83A6B30033D3A4 /* Assets.xcassets */,
 				295FB67B1C83A6B30033D3A4 /* LaunchScreen.storyboard */,
 				295FB67E1C83A6B30033D3A4 /* Info.plist */,
+				2904E5EB1C8CDC83000FDCDD /* GameScene.sks */,
 			);
 			path = Battleship;
 			sourceTree = "<group>";
@@ -156,6 +203,7 @@
 				295FB6A41C83B14F0033D3A4 /* FriendsListTableViewController.swift */,
 				295FB6A81C83B2810033D3A4 /* FriendsListTableViewCell.swift */,
 				295FB6A91C83B2810033D3A4 /* FriendsListTableViewCell.xib */,
+				2904E5D81C8CD368000FDCDD /* GameViewController.swift */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -276,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				295FB67D1C83A6B30033D3A4 /* LaunchScreen.storyboard in Resources */,
+				2904E5EC1C8CDC83000FDCDD /* GameScene.sks in Resources */,
 				295FB67A1C83A6B30033D3A4 /* Assets.xcassets in Resources */,
 				295FB6781C83A6B30033D3A4 /* Main.storyboard in Resources */,
 				295FB6AB1C83B2810033D3A4 /* FriendsListTableViewCell.xib in Resources */,
@@ -305,12 +354,17 @@
 			files = (
 				295FB6B31C83BD210033D3A4 /* GridPoint.swift in Sources */,
 				295FB6A31C83A9280033D3A4 /* SettingsMenuViewController.swift in Sources */,
+				2904E5EA1C8CD60F000FDCDD /* GridSquare.swift in Sources */,
 				295FB6A11C83A8410033D3A4 /* MainMenuViewController.swift in Sources */,
 				295FB6B51C83BE630033D3A4 /* Grid.swift in Sources */,
+				2904E5D91C8CD368000FDCDD /* GameViewController.swift in Sources */,
+				2904E5E51C8CD4EA000FDCDD /* ALView+PureLayout.m in Sources */,
 				295FB6AD1C83B9920033D3A4 /* NewGameViewController.swift in Sources */,
 				295FB6A51C83B14F0033D3A4 /* FriendsListTableViewController.swift in Sources */,
 				295FB6B71C83BFE40033D3A4 /* Ship.swift in Sources */,
 				295FB6B11C83BAF30033D3A4 /* User.swift in Sources */,
+				2904E5E61C8CD4EA000FDCDD /* NSArray+PureLayout.m in Sources */,
+				2904E5E71C8CD4EA000FDCDD /* NSLayoutConstraint+PureLayout.m in Sources */,
 				295FB6AA1C83B2810033D3A4 /* FriendsListTableViewCell.swift in Sources */,
 				295FB6751C83A6B30033D3A4 /* ViewController.swift in Sources */,
 				295FB6731C83A6B30033D3A4 /* AppDelegate.swift in Sources */,
@@ -453,10 +507,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Battleship/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PerrierGavett.Battleship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Battleship/Battleship-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -464,10 +521,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Battleship/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PerrierGavett.Battleship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Battleship/Battleship-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -538,6 +597,7 @@
 				295FB6991C83A6B40033D3A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		295FB69A1C83A6B40033D3A4 /* Build configuration list for PBXNativeTarget "BattleshipTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +606,7 @@
 				295FB69C1C83A6B40033D3A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		295FB69D1C83A6B40033D3A4 /* Build configuration list for PBXNativeTarget "BattleshipUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +615,7 @@
 				295FB69F1C83A6B40033D3A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

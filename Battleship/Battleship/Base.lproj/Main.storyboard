@@ -83,11 +83,17 @@
                                 <rect key="frame" x="136" y="139" width="103" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Random Player"/>
+                                <connections>
+                                    <segue destination="FQn-lX-06N" kind="show" id="S1Z-pb-ULk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRo-YC-cEJ">
                                 <rect key="frame" x="153" y="177" width="69" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Computer"/>
+                                <connections>
+                                    <segue destination="FQn-lX-06N" kind="show" id="A7v-Xk-J5e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -98,6 +104,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ig-C7-CTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1892.5" y="-384.5"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="YH8-hq-PtW">
+            <objects>
+                <viewController id="FQn-lX-06N" customClass="GameViewController" customModule="Battleship" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E6r-hz-WjF"/>
+                        <viewControllerLayoutGuide type="bottom" id="b13-xT-pqT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aw1-6x-07o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ6-vK-gEl">
+                                <rect key="frame" x="20" y="72" width="45" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Rotate"/>
+                                <connections>
+                                    <action selector="rotateCurrentShip:" destination="FQn-lX-06N" eventType="touchUpInside" id="f9f-V5-ATV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="rotateButton" destination="sJ6-vK-gEl" id="5Sr-2f-2yV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ja4-yj-MjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726" y="-370"/>
         </scene>
         <!--Friends List-->
         <scene sceneID="wXd-E8-NO1">
@@ -118,16 +155,7 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="u4R-ZZ-tzf" customClass="FriendsListTableViewCell" customModule="Battleship" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="149" width="375" height="57"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u4R-ZZ-tzf" id="arN-Oj-kPQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="friendCell"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -232,6 +260,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B7i-X4-G5v"/>
+        <segue reference="kJR-k4-gyr"/>
+        <segue reference="S1Z-pb-ULk"/>
     </inferredMetricsTieBreakers>
 </document>

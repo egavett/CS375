@@ -22,6 +22,14 @@
                             <constraint firstAttribute="width" constant="48" id="tKe-Ls-adE"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thd-on-kyg">
+                        <rect key="frame" x="479" y="15" width="108" height="30"/>
+                        <animations/>
+                        <state key="normal" title="Send Challenge"/>
+                        <connections>
+                            <action selector="sendChallenge:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HHu-cr-nB4"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Friend's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWW-TE-baD">
                         <rect key="frame" x="64" y="19" width="138" height="21"/>
                         <animations/>
@@ -29,11 +37,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thd-on-kyg">
-                        <rect key="frame" x="479" y="15" width="108" height="30"/>
-                        <animations/>
-                        <state key="normal" title="Send Challenge"/>
-                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -47,6 +50,11 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="challengeButton" destination="Thd-on-kyg" id="ytX-Ql-5He"/>
+                <outlet property="friendLabel" destination="bWW-TE-baD" id="SVY-bK-L2M"/>
+                <outlet property="friendProfile" destination="xOR-Xv-7V9" id="m3m-oT-15X"/>
+            </connections>
             <point key="canvasLocation" x="765.5" y="448"/>
         </tableViewCell>
     </objects>
