@@ -20,13 +20,15 @@ class GridSquare: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-        self.layer.borderColor = UIColor.blackColor().CGColor
-        self.layer.borderWidth = 1.0
+//    // Only override drawRect: if you perform custom drawing.
+//    // An empty implementation adversely affects performance during animation.
+//    override func drawRect(rect: CGRect) {
+//        // Drawing code
+//       // self.layer.borderColor = UIColor.blackColor().CGColor
+//        //self.layer.borderWidth = 1.0
+//    }
+
+    override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+        return CGRectContainsPoint(self.frame, point)
     }
-
-
 }

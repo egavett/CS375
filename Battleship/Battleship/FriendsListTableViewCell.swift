@@ -26,7 +26,4 @@ class FriendsListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    @IBAction func sendChallenge(sender: AnyObject) {
-    }
 }

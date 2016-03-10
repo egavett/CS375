@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dv6-sy-hyj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dv6-sy-hyj">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Battleship-->
@@ -19,7 +21,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioi-Wb-4LB">
                                 <rect key="frame" x="150" y="319" width="75" height="30"/>
-                                <animations/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
                                     <segue destination="hkC-lV-StB" kind="show" id="Stl-Um-bL4"/>
@@ -27,7 +28,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pO-wZ-fhf">
                                 <rect key="frame" x="150" y="357" width="80" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Friends List"/>
                                 <connections>
                                     <segue destination="FZw-W3-l17" kind="show" id="B7i-X4-G5v"/>
@@ -35,14 +35,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GK-7m-tfT">
                                 <rect key="frame" x="159" y="395" width="57" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <segue destination="yF9-Q8-20f" kind="show" id="3SE-KP-BGx"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Battleship" id="1DM-H7-UQ2"/>
@@ -66,14 +64,12 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select an Opponent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRp-Xi-yn1">
                                 <rect key="frame" x="111" y="72" width="152" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTG-55-wzO">
                                 <rect key="frame" x="165" y="101" width="44" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Friend"/>
                                 <connections>
                                     <segue destination="FZw-W3-l17" kind="show" id="kJR-k4-gyr"/>
@@ -81,7 +77,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COd-q4-yeH">
                                 <rect key="frame" x="136" y="139" width="103" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Random Player"/>
                                 <connections>
                                     <segue destination="FQn-lX-06N" kind="show" id="S1Z-pb-ULk"/>
@@ -89,14 +84,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRo-YC-cEJ">
                                 <rect key="frame" x="153" y="177" width="69" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Computer"/>
                                 <connections>
                                     <segue destination="FQn-lX-06N" kind="show" id="A7v-Xk-J5e"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Game" id="aaS-SH-hbX"/>
@@ -108,25 +101,44 @@
         <!--Game View Controller-->
         <scene sceneID="YH8-hq-PtW">
             <objects>
-                <viewController id="FQn-lX-06N" customClass="GameViewController" customModule="Battleship" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="FQn-lX-06N" customClass="GameViewController" customModule="Battleship" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E6r-hz-WjF"/>
                         <viewControllerLayoutGuide type="bottom" id="b13-xT-pqT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aw1-6x-07o">
+                    <view key="view" contentMode="scaleToFill" id="aw1-6x-07o" customClass="BackgroundView" customModule="Battleship" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ6-vK-gEl">
-                                <rect key="frame" x="20" y="72" width="45" height="30"/>
-                                <animations/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdB-Vd-YZ7" customClass="GameGrid" customModule="Battleship" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vdB-Vd-YZ7" secondAttribute="height" multiplier="1:1" id="vvD-S9-iRa"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ6-vK-gEl">
+                                <rect key="frame" x="20" y="617" width="45" height="30"/>
                                 <state key="normal" title="Rotate"/>
                                 <connections>
                                     <action selector="rotateCurrentShip:" destination="FQn-lX-06N" eventType="touchUpInside" id="f9f-V5-ATV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7g2-u7-pG6">
+                                <rect key="frame" x="75" y="617" width="39" height="30"/>
+                                <state key="normal" title="Begin"/>
+                                <connections>
+                                    <segue destination="Zsl-QD-Ncd" kind="show" id="5jG-rL-UsY"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <animations/>
+                        <constraints>
+                            <constraint firstItem="vdB-Vd-YZ7" firstAttribute="top" secondItem="E6r-hz-WjF" secondAttribute="bottom" id="44J-jR-LFq"/>
+                            <constraint firstItem="sJ6-vK-gEl" firstAttribute="leading" secondItem="aw1-6x-07o" secondAttribute="leadingMargin" constant="4" id="4MV-uJ-W1q"/>
+                            <constraint firstItem="vdB-Vd-YZ7" firstAttribute="leading" secondItem="aw1-6x-07o" secondAttribute="leading" id="Rik-c2-zog"/>
+                            <constraint firstAttribute="bottom" secondItem="sJ6-vK-gEl" secondAttribute="bottom" constant="20" symbolic="YES" id="W3W-rv-USr"/>
+                            <constraint firstAttribute="trailing" secondItem="vdB-Vd-YZ7" secondAttribute="trailing" id="gVg-Ac-YiY"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="rotateButton" destination="sJ6-vK-gEl" id="5Sr-2f-2yV"/>
@@ -134,7 +146,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ja4-yj-MjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2726" y="-370"/>
+            <point key="canvasLocation" x="2725.5" y="-370.5"/>
+        </scene>
+        <!--My Turn Game View Controller-->
+        <scene sceneID="3FA-9D-0WJ">
+            <objects>
+                <viewController id="Zsl-QD-Ncd" customClass="MyTurnGameViewController" customModule="Battleship" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dWq-9O-Nvn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ux6-Om-X05"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AcR-FM-rjg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="056-ZL-cFS" customClass="TouchableGrid" customModule="Battleship" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="056-ZL-cFS" secondAttribute="height" multiplier="1:1" id="sqy-KM-FLO"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49a-KY-cTM">
+                                <rect key="frame" x="28" y="629" width="30" height="30"/>
+                                <state key="normal" title="Fire!"/>
+                                <connections>
+                                    <action selector="playerWillFire:" destination="Zsl-QD-Ncd" eventType="touchUpInside" id="SCr-Lj-a90"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="056-ZL-cFS" firstAttribute="top" secondItem="dWq-9O-Nvn" secondAttribute="bottom" id="MnF-SH-YqS"/>
+                            <constraint firstItem="056-ZL-cFS" firstAttribute="width" secondItem="056-ZL-cFS" secondAttribute="height" multiplier="1:1" id="NCy-B4-3MN"/>
+                            <constraint firstAttribute="trailing" secondItem="056-ZL-cFS" secondAttribute="trailing" id="p5q-fq-ocU"/>
+                            <constraint firstItem="056-ZL-cFS" firstAttribute="leading" secondItem="AcR-FM-rjg" secondAttribute="leading" id="yjL-BP-vlL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRh-hR-GYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3322.5" y="-311.5"/>
         </scene>
         <!--Friends List-->
         <scene sceneID="wXd-E8-NO1">
@@ -143,7 +195,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" id="17a-WK-DCZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="F65-1l-fMg" customClass="FriendsListTableViewCell" customModule="Battleship" customModuleProvider="target">
@@ -152,9 +203,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F65-1l-fMg" id="Y7L-Ws-Pqc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" identifier="friendCell"/>
                             </tableViewCell>
                         </prototypes>
@@ -186,46 +235,39 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrh-jm-P9B">
                                 <rect key="frame" x="20" y="77" width="143" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BuW-JM-duh">
                                 <rect key="frame" x="306" y="72" width="51" height="31"/>
-                                <animations/>
                                 <connections>
                                     <action selector="toggleMusic:" destination="yF9-Q8-20f" eventType="touchUpInside" id="ptQ-Ra-vKN"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUR-mi-wFJ">
                                 <rect key="frame" x="306" y="111" width="51" height="31"/>
-                                <animations/>
                                 <connections>
                                     <action selector="toggleSound:" destination="yF9-Q8-20f" eventType="touchUpInside" id="jWC-sq-mYw"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpo-Ax-Hsv">
                                 <rect key="frame" x="20" y="145" width="165" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Change User Name"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbG-z4-Mzy">
                                 <rect key="frame" x="20" y="183" width="165" height="34"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Set Profile Picture"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rD9-3j-sQy">
                                 <rect key="frame" x="20" y="116" width="143" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="vB1-ED-TC0"/>
@@ -247,7 +289,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CRJ-1V-ZY0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

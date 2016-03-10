@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SpriteKit
+//import SpriteKit
 
 class GameViewController: UIViewController, UIGestureRecognizerDelegate {
 //    var width: CGFloat!
@@ -20,25 +20,30 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-//        
-//        let sKView: SKView = SKView(frame: CGRectMake(10, 54, 100, 100))
-//    
-//        self.view.addSubview(sKView)
+        //self.view = BackgroundView(frame: self.view.frame)
         
-        // Touch Gesture
-        let singleTap = UIGestureRecognizer(target: self, action: "selectShip:")
-        singleTap.delegate = self
-        
-        let x = 10
-        let y = 200
+        let x = 50
+        let y = 450
         for i in 1...5 {
-            let ship = UIView()
+            let ship = ShipView()
             
-            ship.frame = CGRectMake(CGFloat(x + i*20), CGFloat(y + i*20), 10.0, CGFloat(i*10))
+            let singleTap = UITapGestureRecognizer(target: self, action: "selectShip:")
+            singleTap.delegate = self
+            ship.addGestureRecognizer(singleTap)
+            ship.tag = i
+            
+            if(i == 1) {
+                ship.frame = CGRectMake(CGFloat(x) + CGFloat(i)*(self.view.frame.width/10.0+10.0), CGFloat(y), (self.view.frame.width/10.0), CGFloat(CGFloat(3)*(self.view.frame.width/10.0)))
+            } else {
+                ship.frame = CGRectMake(CGFloat(x) + CGFloat(i)*(self.view.frame.width/10.0+10.0), CGFloat(y), (self.view.frame.width/10.0), CGFloat(CGFloat(i)*(self.view.frame.width/10.0)))
+            }
+            
             ship.backgroundColor = UIColor.redColor()
             
-            ship.addGestureRecognizer(singleTap)
+            ship.layer.borderColor = UIColor.blackColor().CGColor
+            ship.layer.borderWidth = 1.0
+            
+            
             
             self.view.addSubview(ship)
         }
@@ -51,45 +56,22 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func rotateCurrentShip(sender: AnyObject) {
-        for subview in self.view.subviews {
-            // Reverse every ships frame
-            subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y, subview.frame.height, subview.frame.width)
-        }
+        currentShip = (self.view as! BackgroundView).currentShip
+        currentShip?.frame = CGRectMake(currentShip!.frame.origin.x, currentShip!.frame.origin.y, currentShip!.frame.height, currentShip!.frame.width)
     }
     
-    func selectShip(sender: AnyObject?) {
+    func selectShip(sender: UIGestureRecognizer) {
         currentShip?.backgroundColor = UIColor.redColor()
         
-        currentShip = (sender as! UIView)
+        currentShip = sender.view
         
         currentShip?.backgroundColor = UIColor.greenColor()
     }
     
     
-//    func createGrid() {
-//        let grid = SKNode() // Creates a node to hold
-//        
-//        let useableWidth = self.view.frame.width * 0.9
-//        let usableHeight = self.view.frame.height * 0.8
-//        
-//        boxSize = usableHeight / height
-//        width = CGFloat(Int(useableWidth / boxSize))
-//        
-//        let offsetX = (self.view.frame.width - boxSize * width) / 2
-//        let offsetY = (self.view.frame.height - boxSize * height) / 2
-//        
-//        for col in 0..<Int(self.width){
-//            for row in 0 ..< Int(self.height){
-//                // BOX CREATION
-//            }
-//        }
-//        
-//        gridStart = CGPointMake(offsetX, offsetY)
-//        grid.position = CGPointMake(offsetX, offsetY)
-//        //addChild(grid)
-//        
-//    }
-
+    
+    
+    
     /*
     // MARK: - Navigation
 

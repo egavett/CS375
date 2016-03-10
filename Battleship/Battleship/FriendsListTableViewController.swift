@@ -26,15 +26,12 @@ class FriendsListTableViewController: UITableViewController {
         //let toolbar = UIToolbar()
         //toolbar.sizeToFit()
         
-        let item1 = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: "addFriend")
-        let item2 = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        let item3 = UIBarButtonItem(title: "Remove", style: .Plain, target: self, action: "removeFriend")
         
         //toolbar.setItems([item1, item2, item3], animated: true)
         
        // toolbar.backgroundColor = UIColor.redColor()
         //self.view.addSubview(toolbar)
-        self.navigationController?.toolbar.setItems([item1, item2, item3], animated: true)
+       // self.navigationController?.toolbar.setItems([item1, item2, item3], animated: true)
         
         
        // toolbar.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
@@ -49,6 +46,22 @@ class FriendsListTableViewController: UITableViewController {
         self.navigationController?.toolbarHidden = true
     }
     
+    //override func toolbarItems() ->[UIBarButtonItem]? {
+    override var toolbarItems: [UIBarButtonItem]? {
+        get{
+            let item1 = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: "addFriend")
+            let item2 = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+            let item3 = UIBarButtonItem(title: "Remove", style: .Plain, target: self, action: "removeFriend")
+            
+            return [item1, item2, item3]
+        }
+        
+        set{
+            
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,7 +71,7 @@ class FriendsListTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,16 +96,17 @@ class FriendsListTableViewController: UITableViewController {
         
         cell?.friendLabel.text = "Friend Name"
         
-        cell?.challengeButton.addTarget(self, action: "sendChallenge", forControlEvents: .TouchUpInside)
-        
-        // Configure the cell...
-        
-        
-        
+        cell?.challengeButton.addTarget(self, action: "sendChallenge:", forControlEvents: .TouchUpInside)
         return cell!
     }
 
-
+    func sendChallenge(sender: AnyObject?) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let gameVC = storyboard.instantiateViewControllerWithIdentifier("GameViewController")
+        
+        self.navigationController?.pushViewController(gameVC, animated: true)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
