@@ -12,12 +12,14 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
     
     var currentShip: ShipView?
     var panRecognizer: UIPanGestureRecognizer?
+    var gameGrid: GameGrid?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.currentShip = nil
         
-        self.panRecognizer = UIPanGestureRecognizer(target: self, action: ("moveShip:"))
+        self.panRecognizer = UIPanGestureRecognizer(target: self, action: (#selector(BackgroundView.moveShip(_:))))
         self.panRecognizer?.delegate = self
         self.panRecognizer?.cancelsTouchesInView = false
         self.addGestureRecognizer(panRecognizer!)
@@ -27,13 +29,14 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         self.currentShip = nil
         
-        self.panRecognizer = UIPanGestureRecognizer(target: self, action: ("moveShip:"))
+        self.panRecognizer = UIPanGestureRecognizer(target: self, action: (#selector(BackgroundView.moveShip(_:))))
         self.panRecognizer?.delegate = self
         self.panRecognizer?.cancelsTouchesInView = false
         self.addGestureRecognizer(panRecognizer!)
+        
+        self.backgroundColor = UIColor.whiteColor()
     }
     
     
@@ -85,6 +88,8 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
                 self.setNeedsDisplay()
                 gr.setTranslation(CGPointZero, inView: self)
             }
+        } else if (gr.state == UIGestureRecognizerState.Ended) {
+            
         }
     }
 }

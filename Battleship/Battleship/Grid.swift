@@ -14,13 +14,10 @@ class Grid: NSObject {
     override init() {
         super.init()
         // Create a 10x10 grid
-        for var i = 0; i < 9; i++ {
-            for var j = 0; j < 9; j++ {
+        for i in 0 ..< 9 {
+            for j in 0 ..< 9 {
                 gameGrid[i][j] = GridPoint()
             }
         }
     }
-    
-    
-    
 }

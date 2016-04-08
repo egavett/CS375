@@ -19,25 +19,6 @@ class TouchableGrid: UIView, UIGestureRecognizerDelegate {
         let cellWidth:CGFloat = self.frame.width / 10.0
         let cellHeight:CGFloat = self.frame.height / 10.0
         
-//        let ctx = UIGraphicsGetCurrentContext()
-//        for (var x:CGFloat = 0.0; x < rect.size.width; x += cellWidth){
-//            CGContextBeginPath(ctx)
-//            CGContextMoveToPoint(ctx, x, 0)
-//            CGContextAddLineToPoint(ctx, x, rect.size.height)
-//            CGContextSetLineWidth(ctx, 1)
-//            UIColor.blackColor().setStroke()
-//            CGContextStrokePath(ctx)
-//        }
-//        
-//        for (var y:CGFloat = 0.0; y < rect.size.height; y += cellHeight){
-//            CGContextBeginPath(ctx)
-//            CGContextMoveToPoint(ctx, 0, y)
-//            CGContextAddLineToPoint(ctx, rect.size.width, y)
-//            CGContextSetLineWidth(ctx, 1)
-//            UIColor.blackColor().setStroke()
-//            CGContextStrokePath(ctx)
-//        }
-        
         var x: CGFloat = 0
         var y: CGFloat = 0
         

@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        // Initialize Parse
+        Parse.initializeWithConfiguration(ParseClientConfiguration{ (config) in
+                config.applicationId = "72e29589-d6df-4a5f-b98f-1e521a6cc18d"
+                config.clientKey = " "
+                config.server = "http://cs375bship.azurewebsites.net/parse"
+            })
+        
         return true
     }
 

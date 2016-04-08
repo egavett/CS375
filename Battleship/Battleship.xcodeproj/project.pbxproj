@@ -31,6 +31,20 @@
 		E64DE6E21C90E8A200BE7F68 /* MyTurnGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64DE6E11C90E8A200BE7F68 /* MyTurnGameViewController.swift */; };
 		E64DE6E41C90E9CE00BE7F68 /* TouchableGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64DE6E31C90E9CE00BE7F68 /* TouchableGrid.swift */; };
 		E65809411C8E167C0053D14E /* GameGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65809401C8E167C0053D14E /* GameGrid.swift */; };
+		E6F6075E1CB839D500083EBD /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F607561CB839D500083EBD /* ALView+PureLayout.m */; };
+		E6F6075F1CB839D500083EBD /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F607581CB839D500083EBD /* NSArray+PureLayout.m */; };
+		E6F607601CB839D500083EBD /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F6075A1CB839D500083EBD /* NSLayoutConstraint+PureLayout.m */; };
+		E6F607701CB83CCD00083EBD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6076B1CB83CCD00083EBD /* Bolts.framework */; };
+		E6F607711CB83CCD00083EBD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6076C1CB83CCD00083EBD /* Parse.framework */; };
+		E6F607721CB83CCD00083EBD /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6076D1CB83CCD00083EBD /* ParseFacebookUtilsV4.framework */; };
+		E6F607731CB83CCD00083EBD /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6076E1CB83CCD00083EBD /* ParseTwitterUtils.framework */; };
+		E6F607741CB83CCD00083EBD /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6076F1CB83CCD00083EBD /* ParseUI.framework */; };
+		E6F607761CB83CFE00083EBD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F607751CB83CFE00083EBD /* libsqlite3.tbd */; };
+		E6F607781CB83D0900083EBD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F607771CB83D0900083EBD /* MobileCoreServices.framework */; };
+		E6F6077A1CB83D1400083EBD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F607791CB83D1400083EBD /* AudioToolbox.framework */; };
+		E6F6077C1CB83D6C00083EBD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6077B1CB83D6C00083EBD /* CFNetwork.framework */; };
+		E6F6077E1CB83D7300083EBD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6077D1CB83D7300083EBD /* Security.framework */; };
+		E6F607801CB83D7A00083EBD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F6077F1CB83D7A00083EBD /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +95,27 @@
 		E64DE6E11C90E8A200BE7F68 /* MyTurnGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTurnGameViewController.swift; sourceTree = "<group>"; };
 		E64DE6E31C90E9CE00BE7F68 /* TouchableGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchableGrid.swift; sourceTree = "<group>"; };
 		E65809401C8E167C0053D14E /* GameGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGrid.swift; sourceTree = "<group>"; };
+		E6F607541CB839D400083EBD /* Battleship-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Battleship-Bridging-Header.h"; sourceTree = "<group>"; };
+		E6F607551CB839D500083EBD /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		E6F607561CB839D500083EBD /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		E6F607571CB839D500083EBD /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		E6F607581CB839D500083EBD /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		E6F607591CB839D500083EBD /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		E6F6075A1CB839D500083EBD /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		E6F6075B1CB839D500083EBD /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		E6F6075C1CB839D500083EBD /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		E6F6075D1CB839D500083EBD /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
+		E6F6076B1CB83CCD00083EBD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E6F6076C1CB83CCD00083EBD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E6F6076D1CB83CCD00083EBD /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		E6F6076E1CB83CCD00083EBD /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
+		E6F6076F1CB83CCD00083EBD /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		E6F607751CB83CFE00083EBD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E6F607771CB83D0900083EBD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E6F607791CB83D1400083EBD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E6F6077B1CB83D6C00083EBD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E6F6077D1CB83D7300083EBD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E6F6077F1CB83D7A00083EBD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +123,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F607801CB83D7A00083EBD /* SystemConfiguration.framework in Frameworks */,
+				E6F6077E1CB83D7300083EBD /* Security.framework in Frameworks */,
+				E6F6077C1CB83D6C00083EBD /* CFNetwork.framework in Frameworks */,
+				E6F6077A1CB83D1400083EBD /* AudioToolbox.framework in Frameworks */,
+				E6F607781CB83D0900083EBD /* MobileCoreServices.framework in Frameworks */,
+				E6F607761CB83CFE00083EBD /* libsqlite3.tbd in Frameworks */,
+				E6F607711CB83CCD00083EBD /* Parse.framework in Frameworks */,
+				E6F607701CB83CCD00083EBD /* Bolts.framework in Frameworks */,
+				E6F607741CB83CCD00083EBD /* ParseUI.framework in Frameworks */,
+				E6F607731CB83CCD00083EBD /* ParseTwitterUtils.framework in Frameworks */,
+				E6F607721CB83CCD00083EBD /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,11 +154,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2904E5DA1C8CD48B000FDCDD /* PureLayout */ = {
+		2904E5DA1C8CD48B000FDCDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6F6076B1CB83CCD00083EBD /* Bolts.framework */,
+				E6F6076C1CB83CCD00083EBD /* Parse.framework */,
+				E6F6076D1CB83CCD00083EBD /* ParseFacebookUtilsV4.framework */,
+				E6F6076E1CB83CCD00083EBD /* ParseTwitterUtils.framework */,
+				E6F6076F1CB83CCD00083EBD /* ParseUI.framework */,
+				E6F607551CB839D500083EBD /* ALView+PureLayout.h */,
+				E6F607561CB839D500083EBD /* ALView+PureLayout.m */,
+				E6F607571CB839D500083EBD /* NSArray+PureLayout.h */,
+				E6F607581CB839D500083EBD /* NSArray+PureLayout.m */,
+				E6F607591CB839D500083EBD /* NSLayoutConstraint+PureLayout.h */,
+				E6F6075A1CB839D500083EBD /* NSLayoutConstraint+PureLayout.m */,
+				E6F6075B1CB839D500083EBD /* PureLayout.h */,
+				E6F6075C1CB839D500083EBD /* PureLayout+Internal.h */,
+				E6F6075D1CB839D500083EBD /* PureLayoutDefines.h */,
+				E6F607541CB839D400083EBD /* Battleship-Bridging-Header.h */,
 			);
-			name = PureLayout;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2904E5E81C8CD5E4000FDCDD /* Custom Views */ = {
@@ -130,6 +191,12 @@
 		295FB6661C83A6B30033D3A4 = {
 			isa = PBXGroup;
 			children = (
+				E6F6077F1CB83D7A00083EBD /* SystemConfiguration.framework */,
+				E6F6077D1CB83D7300083EBD /* Security.framework */,
+				E6F6077B1CB83D6C00083EBD /* CFNetwork.framework */,
+				E6F607791CB83D1400083EBD /* AudioToolbox.framework */,
+				E6F607771CB83D0900083EBD /* MobileCoreServices.framework */,
+				E6F607751CB83CFE00083EBD /* libsqlite3.tbd */,
 				295FB6711C83A6B30033D3A4 /* Battleship */,
 				295FB6861C83A6B30033D3A4 /* BattleshipTests */,
 				295FB6911C83A6B40033D3A4 /* BattleshipUITests */,
@@ -150,7 +217,7 @@
 		295FB6711C83A6B30033D3A4 /* Battleship */ = {
 			isa = PBXGroup;
 			children = (
-				2904E5DA1C8CD48B000FDCDD /* PureLayout */,
+				2904E5DA1C8CD48B000FDCDD /* Frameworks */,
 				295FB6AF1C83BAA30033D3A4 /* Objects */,
 				2904E5E81C8CD5E4000FDCDD /* Custom Views */,
 				295FB6AE1C83BA8A0033D3A4 /* User Interface */,
@@ -270,7 +337,7 @@
 		295FB6671C83A6B30033D3A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Elijah L Gavett";
 				TargetAttributes = {
@@ -344,6 +411,7 @@
 				295FB6B31C83BD210033D3A4 /* GridPoint.swift in Sources */,
 				295FB6A31C83A9280033D3A4 /* SettingsMenuViewController.swift in Sources */,
 				2904E5EA1C8CD60F000FDCDD /* GridSquare.swift in Sources */,
+				E6F6075F1CB839D500083EBD /* NSArray+PureLayout.m in Sources */,
 				E65809411C8E167C0053D14E /* GameGrid.swift in Sources */,
 				295FB6A11C83A8410033D3A4 /* MainMenuViewController.swift in Sources */,
 				295FB6B51C83BE630033D3A4 /* Grid.swift in Sources */,
@@ -353,9 +421,11 @@
 				295FB6AD1C83B9920033D3A4 /* NewGameViewController.swift in Sources */,
 				295FB6A51C83B14F0033D3A4 /* FriendsListTableViewController.swift in Sources */,
 				295FB6B71C83BFE40033D3A4 /* Ship.swift in Sources */,
+				E6F607601CB839D500083EBD /* NSLayoutConstraint+PureLayout.m in Sources */,
 				295FB6B11C83BAF30033D3A4 /* User.swift in Sources */,
 				295FB6AA1C83B2810033D3A4 /* FriendsListTableViewCell.swift in Sources */,
 				295FB6751C83A6B30033D3A4 /* ViewController.swift in Sources */,
+				E6F6075E1CB839D500083EBD /* ALView+PureLayout.m in Sources */,
 				E64DE6E21C90E8A200BE7F68 /* MyTurnGameViewController.swift in Sources */,
 				295FB6731C83A6B30033D3A4 /* AppDelegate.swift in Sources */,
 			);
@@ -498,10 +568,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Battleship",
+				);
 				INFOPLIST_FILE = Battleship/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PerrierGavett.Battleship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Battleship/Battleship-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -511,10 +586,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Battleship",
+				);
 				INFOPLIST_FILE = Battleship/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PerrierGavett.Battleship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Battleship/Battleship-Bridging-Header.h";
 			};
 			name = Release;
 		};

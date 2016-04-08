@@ -49,9 +49,9 @@ class FriendsListTableViewController: UITableViewController {
     //override func toolbarItems() ->[UIBarButtonItem]? {
     override var toolbarItems: [UIBarButtonItem]? {
         get{
-            let item1 = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: "addFriend")
+            let item1 = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: Selector("addFriend"))
             let item2 = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-            let item3 = UIBarButtonItem(title: "Remove", style: .Plain, target: self, action: "removeFriend")
+            let item3 = UIBarButtonItem(title: "Remove", style: .Plain, target: self, action: Selector("removeFriend"))
             
             return [item1, item2, item3]
         }
@@ -96,7 +96,7 @@ class FriendsListTableViewController: UITableViewController {
         
         cell?.friendLabel.text = "Friend Name"
         
-        cell?.challengeButton.addTarget(self, action: "sendChallenge:", forControlEvents: .TouchUpInside)
+        cell?.challengeButton.addTarget(self, action: #selector(FriendsListTableViewController.sendChallenge(_:)), forControlEvents: .TouchUpInside)
         return cell!
     }
 

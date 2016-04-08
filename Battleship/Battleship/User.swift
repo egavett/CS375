@@ -15,7 +15,7 @@ class User: NSObject {
     var gamesPlayed: Int = 0
     var friendsList = [User]()
     
-    init(_ userName: String){
+    init(userName: String){
         self.userName = userName
     }
     

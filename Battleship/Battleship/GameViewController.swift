@@ -15,6 +15,7 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
 //    var boxSize: CGFloat!
 //    var gridStart: CGPoint!
     @IBOutlet weak var rotateButton: UIButton!
+    @IBOutlet weak var gameGrid: GameGrid!
     weak var currentShip: UIView?
     
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
         for i in 1...5 {
             let ship = ShipView()
             
-            let singleTap = UITapGestureRecognizer(target: self, action: "selectShip:")
+            let singleTap = UITapGestureRecognizer(target: self, action: #selector(GameViewController.selectShip(_:)))
             singleTap.delegate = self
             ship.addGestureRecognizer(singleTap)
             ship.tag = i
@@ -43,16 +44,8 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
             ship.layer.borderColor = UIColor.blackColor().CGColor
             ship.layer.borderWidth = 1.0
             
-            
-            
             self.view.addSubview(ship)
         }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func rotateCurrentShip(sender: AnyObject) {
