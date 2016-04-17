@@ -12,10 +12,30 @@ class SettingsMenuViewController: UIViewController {
     
     @IBOutlet weak var musicLabel: UILabel!
     @IBOutlet weak var soundLabel: UILabel!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var gamesWonLabel: UILabel!
+    @IBOutlet weak var gamesPlayedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let currentUser = PFUser.currentUser()
+        
+        let query = PFQuery(className: "gameStats")
+        
+        query.whereKey("user", equalTo: currentUser!)
+        query.getFirstObjectInBackgroundWithBlock( {(stats, error) in
+            if (error != nil) {
+                print(error?.localizedDescription)
+            } else {
+                self.gamesWonLabel.text = (stats?.objectForKey("gamesWon") as? String)
+                self.gamesPlayedLabel.text = (stats?.objectForKey("gamesPlayed") as? String)
+                print("Labels should be updated")
+            }
+            
+            
+        })
+        
         // Do any additional setup after loading the view.
     }
 
@@ -40,6 +60,26 @@ class SettingsMenuViewController: UIViewController {
         }
     }
     
+    @IBAction func changeUsername(sender: AnyObject) {
+        // Get the users new username and the current user
+        let newUsername = self.usernameField.text
+        let currentUser = PFUser.currentUser()
+        
+        // Change the username
+        currentUser?.username = newUsername
+        
+        // Update on Parse
+        currentUser?.saveInBackgroundWithBlock( { (user, error) in
+            if (error != nil)
+            {
+                print(error?.localizedDescription)
+            }
+            else
+            {
+                print("Successful login")
+            }
+        })
+    }
     /*
     // MARK: - Navigation
 

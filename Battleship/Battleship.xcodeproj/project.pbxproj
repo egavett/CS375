@@ -157,6 +157,12 @@
 		2904E5DA1C8CD48B000FDCDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6F6077F1CB83D7A00083EBD /* SystemConfiguration.framework */,
+				E6F6077D1CB83D7300083EBD /* Security.framework */,
+				E6F6077B1CB83D6C00083EBD /* CFNetwork.framework */,
+				E6F607791CB83D1400083EBD /* AudioToolbox.framework */,
+				E6F607771CB83D0900083EBD /* MobileCoreServices.framework */,
+				E6F607751CB83CFE00083EBD /* libsqlite3.tbd */,
 				E6F6076B1CB83CCD00083EBD /* Bolts.framework */,
 				E6F6076C1CB83CCD00083EBD /* Parse.framework */,
 				E6F6076D1CB83CCD00083EBD /* ParseFacebookUtilsV4.framework */,
@@ -191,12 +197,6 @@
 		295FB6661C83A6B30033D3A4 = {
 			isa = PBXGroup;
 			children = (
-				E6F6077F1CB83D7A00083EBD /* SystemConfiguration.framework */,
-				E6F6077D1CB83D7300083EBD /* Security.framework */,
-				E6F6077B1CB83D6C00083EBD /* CFNetwork.framework */,
-				E6F607791CB83D1400083EBD /* AudioToolbox.framework */,
-				E6F607771CB83D0900083EBD /* MobileCoreServices.framework */,
-				E6F607751CB83CFE00083EBD /* libsqlite3.tbd */,
 				295FB6711C83A6B30033D3A4 /* Battleship */,
 				295FB6861C83A6B30033D3A4 /* BattleshipTests */,
 				295FB6911C83A6B40033D3A4 /* BattleshipUITests */,

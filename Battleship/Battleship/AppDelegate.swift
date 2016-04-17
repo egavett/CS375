@@ -18,10 +18,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Initialize Parse
         Parse.initializeWithConfiguration(ParseClientConfiguration{ (config) in
-                config.applicationId = "72e29589-d6df-4a5f-b98f-1e521a6cc18d"
-                config.clientKey = " "
-                config.server = "http://cs375bship.azurewebsites.net/parse"
-            })
+            config.applicationId = "f1b626b8-cbb4-4dc7-b973-e98b2fa4de02"
+            config.clientKey = " "
+            config.server = "http://cs375bship.azurewebsites.net/parse"
+        })
+        
+//        let userName = "testUser2"
+//        let password = "strongPassword"
+//        let testUser = PFUser()
+//        testUser.username = userName
+//        testUser.password = password
+//        testUser.setObject(4, forKey: "gamesPlayed")
+//        testUser.setObject(1, forKey: "gamesWon")
+//        
+//        testUser.signUpInBackgroundWithBlock({ (success, error) in
+//            if (error != nil) {
+//                print(error?.localizedDescription)
+//            }
+//            if (success) {
+//                print("Successful?")
+//            }
+//        
+//        })
+        
+        PFUser.logInWithUsernameInBackground("MyNewUsername", password: "strongPassword", block: { (user, error) in
+            if (error != nil)
+            {
+                print(error?.localizedDescription)
+            }
+            else
+            {
+                print("Successful login")
+            }
+        })
+        
+        let testUser = PFUser.currentUser()
+        
+        let gameStats = PFObject(className: "gameStats")
+        gameStats.setObject(testUser!, forKey: "user")
+        gameStats.setObject(4, forKey: "gamesPlayed")
+        gameStats.setObject(1, forKey: "gamesWon")
+        gameStats.saveInBackgroundWithBlock({ (success, error) in
+            if (error != nil)
+            {
+                print(error?.localizedDescription);
+            }
+            else
+            {
+                print("Successfully saved")
+            }
+        })
         
         return true
     }
