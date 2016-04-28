@@ -10,13 +10,12 @@ import UIKit
 
 class Ship: NSObject {
     var front: GridPoint?
-    var back: GridPoint?
+    var length: Int = -1
     var health: Array<Bool> = [] /// Return false if the ship secton has NOT been attacked
     var horizontal = false
     
-    init(front: GridPoint, back:GridPoint, length: Int) {
-        self.front = front
-        self.back = back
+    init(length: Int) {
+        self.length = length
         for _ in 0...length {
             self.health.append(false)
         }
