@@ -75,16 +75,26 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
     }
     
     func moveShip(gr: UIPanGestureRecognizer) {
-        if (gr.state == UIGestureRecognizerState.Changed){
+        if (gr.state == UIGestureRecognizerState.Began) {
             if self.currentShip != nil {
+                // If the ship has been placed somewhere else before
+                // Set currentShip's previously occupied squares to not occupied
+                if (currentShip?.ship?.front != nil) {
+                    setCurrentShipSquaresTo(false)
+                }
+            }
+        } else if (gr.state == UIGestureRecognizerState.Changed){
+            if self.currentShip != nil {
+                // FInd the difference between where currentShip was and is
                 let translation = gr.translationInView(self)
                 var newLocation = self.currentShip!.frame.origin
-            
                 newLocation.x += translation.x
                 newLocation.y += translation.y
                 
+                // Update currentShip's frame
                 self.currentShip!.frame = CGRectMake(newLocation.x, newLocation.y, self.currentShip!.frame.width, self.currentShip!.frame.height)
-            
+                
+                // Helper code
                 self.setNeedsDisplay()
                 gr.setTranslation(CGPointZero, inView: self)
             }
@@ -93,6 +103,8 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
                 // Find the distance from the currentShip to the first gridSquare
                 var closeGrid: GridSquare = self.gameGrid?.subviews[0] as! GridSquare
                 var closeDistance = distanceFromView(self.currentShip!, toView: (self.gameGrid?.subviews[0])!)
+                
+                // If the ship is closer to another gridSquare, set that as the closest gridSquare
                 for gridSquare in (self.gameGrid?.subviews)! {
                     let newDistance = distanceFromView(self.currentShip!, toView: gridSquare)
                     if (closeDistance >= newDistance) {
@@ -102,45 +114,18 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
                 }
                 
                 // Check if currentShip's position is valid
-                if (isCurrentShipInValidGridSquare(closeGrid)) {
-                    // Some helper varibles to make life a little easier
-                    let xAxis = closeGrid.x
-                    let yAxis = closeGrid.y
-                    let length: Int = (currentShip!.ship?.length)!
+                if (isCurrentShipInValidGridPoint(closeGrid.gridPoint!)) {
                     
-                    // Set currentShip's previously occupied squares to not occupied
-                    if (currentShip?.ship?.front != nil) {
-                        if (currentShip?.ship?.horizontal == true) {
-                            for x in 0...length {
-                                gameGrid?.gridArray[xAxis + x][yAxis].gridPoint?.occupied = false
-                            }
-                        } else {
-                            for y in 0...length {
-                                gameGrid?.gridArray[xAxis][yAxis + y].gridPoint?.occupied = false
-                            }
-                        }
-                    }
                     
                     // Set currentShip's front
                     currentShip?.ship?.front = closeGrid.gridPoint
                     
                     // Set applicable squares to occupied
-                    if (currentShip?.ship?.horizontal == true) {
-                        // Set the affected squares to occupied
-                        for x in 0...length {
-                            gameGrid?.gridArray[xAxis + x][yAxis].gridPoint?.occupied = true
-                        }
-                        
-                    } else {
-                        // Set the affected squares to occupied
-                        for y in 0...length {
-                            gameGrid?.gridArray[xAxis][yAxis + y].gridPoint?.occupied = true
-                        }
-                    }
+                    setCurrentShipSquaresTo(true)
                     
                     // Move currentShip to the closest gridSquare
                     UIView.animateWithDuration(0.3333, animations: {
-                        let frame = closeGrid.convertRect((closeGrid.bounds), toView: self.superview)
+                        let frame = closeGrid.convertRect((closeGrid.bounds), toView: nil)
                         self.currentShip?.frame.origin = frame.origin
                     })
                 }
@@ -148,17 +133,45 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
+    /// Sets all the squares underneath the ship to true or false, based on the condition
+    func setCurrentShipSquaresTo(bool: Bool) -> () {
+        // Get the indexes of the front of the ship, as well as the length
+        let xAxis:Int = (currentShip?.ship?.front?.x)!
+        let yAxis:Int = (currentShip?.ship?.front?.y)!
+        let length: Int = (currentShip?.ship?.length)!
+        
+        // Direction of iteration based upon currentShip's horizontal
+        if (currentShip?.ship?.horizontal == false) {
+            // Make sure currentShip is within bounds
+            if(xAxis + length <= 10) {
+                for x in 0..<length {
+                    gameGrid?.gridArray[xAxis + x][yAxis].gridPoint?.occupied = bool
+                }
+            }
+        } else {
+            // Make sure currentShip is within bounds
+            if(yAxis + length <= 10) {
+                for y in 0..<length {
+                    gameGrid?.gridArray[xAxis][yAxis + y].gridPoint?.occupied = bool
+                }
+            }
+        }
+        
+        // Update the gameGrid colors
+        gameGrid?.updateGridColors()
+    }
+
     /// Returns true if the ship is placed in a valid position
-    func isCurrentShipInValidGridSquare(gridSquare: GridSquare) -> Bool {
+    func isCurrentShipInValidGridPoint(gridPoint: GridPoint) -> Bool {
         // Get the x/y position of the gridSquare, plus the length of the ship
-        let xAxis = gridSquare.x
-        let yAxis = gridSquare.y
+        let xAxis = gridPoint.x
+        let yAxis = gridPoint.y
         let length: Int = (currentShip!.ship?.length)!
         
         // Incrementation direction based on horizontal property
-        if (currentShip!.ship?.horizontal == true) {
+        if (currentShip!.ship?.horizontal == false) {
             // Check every space that the ship covers
-            for x in 0...length {
+            for x in 0..<length {
                 // If the square is outside the grid, return false
                 if (xAxis + x) > 9 { return false }
                 
@@ -167,7 +180,7 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
             }
         } else {
             // Check every space that the ship covers
-            for y in 0...length {
+            for y in 0..<length {
                 // If the square is outside the grid, return false
                 if (yAxis + y) > 9 { return false }
                 
@@ -180,9 +193,9 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
         return true
     }
     
-    
     /// Finds the distance between the origins of two views using the distance formula
     func distanceFromView(view1: UIView, toView view2: UIView) -> Float {
+        // Distance formula
         let distanceX: Double = Double(view2.frame.origin.x - view1.frame.origin.x)
         let distanceY: Double = Double(view2.frame.origin.y - view1.frame.origin.y)
         return sqrt(Float(pow(distanceX, 2) + pow(distanceY, 2)));

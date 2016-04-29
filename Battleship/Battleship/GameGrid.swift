@@ -9,9 +9,19 @@
 import UIKit
 
 class GameGrid: UIView {
-
     var gridArray = [[GridSquare]]()
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        // Set the gridArray size to be 10x10
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -26,27 +36,48 @@ class GameGrid: UIView {
         
         // Create cells
         for i in 0...9 {
+            // Next row to append to the gridArray
+            var nextRow = [GridSquare]()
+            
             for j in 0...9 {
                 // Create the cell
-                let gridCell = GridSquare(frame: CGRectMake(x, y, cellWidth, cellHeight), gridPoint: GridPoint(), x: i, y: j)
+                let point = GridPoint(x: Int(i), y: Int(j))
+                let gridSquare = GridSquare(frame: CGRectMake(x, y, cellWidth, cellHeight), gp: point)
                 
                 // Set the display properties
-                gridCell.backgroundColor = UIColor.whiteColor()
-                gridCell.layer.borderWidth = 1.0
-                gridCell.layer.borderColor = UIColor.blackColor().CGColor
+                gridSquare.backgroundColor = UIColor.whiteColor()
+                gridSquare.layer.borderWidth = 1.0
+                gridSquare.layer.borderColor = UIColor.blackColor().CGColor
                 
-                // Add the cell to the view hierarchy and the gridsquare array
-                self.addSubview(gridCell)
-                gridArray[i][j] = gridCell
+                
+                // Add the square to the view hierarchy and the gridsquare array
+                self.addSubview(gridSquare)
+                nextRow.append(gridSquare)
                 
                 // Increment x
                 x += cellWidth
+                
+                // DEBUG: What is the x/y position
+                print("At position:", i, j)
             }
+            // Apend the row to the main array
+            gridArray.append(nextRow)
+            
             // Reset x, increment y
             x = 0
             y += cellHeight
         }
     }
-
-
+    
+    // MARK: Debugging
+    /// Sets unoccupied girdSquare backgrounds to white, occupied to blue
+    func updateGridColors() -> () {
+        for gridSquare in self.subviews {
+            if (gridSquare as! GridSquare).gridPoint!.occupied == true{
+                gridSquare.backgroundColor = UIColor.blueColor()
+            } else {
+                gridSquare.backgroundColor = UIColor.whiteColor()
+            }
+        }
+    }
 }

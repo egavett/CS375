@@ -56,40 +56,55 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func rotateCurrentShip(sender: AnyObject) {
-        // Rotate the ship's frame
+        // Make sure we have the currentShip
         currentShip = (self.view as! BackgroundView).currentShip
-        currentShip?.frame = CGRectMake(currentShip!.frame.origin.x, currentShip!.frame.origin.y, currentShip!.frame.height, currentShip!.frame.width)
         
-        // Update the ship's horizontal property
-        if ((currentShip?.ship?.horizontal) == true) {
-            currentShip?.ship?.horizontal = false
-        } else  {
-            currentShip?.ship?.horizontal = true
+        // If the ship is already on the grid, then set currentShip's squares to not-occupied
+        if (currentShip?.ship?.front != nil) {
+            (view as! BackgroundView).setCurrentShipSquaresTo(false)
+        
+            // Swap currentShip's horizontal property
+            currentShip?.ship?.horizontal = !((currentShip?.ship?.horizontal)!)
+        
+            // See if the ship is still in a valid location
+            if (self.view as! BackgroundView).isCurrentShipInValidGridPoint((currentShip?.ship!.front)!) {
+                // Rotate the ship's frame
+                currentShip?.frame = CGRectMake(currentShip!.frame.origin.x, currentShip!.frame.origin.y, currentShip!.frame.height, currentShip!.frame.width)
+            } else {
+                // Reset horizontal
+                currentShip?.ship?.horizontal = !((currentShip?.ship?.horizontal)!)
+            }
+        
+            // Set currentShip squares to occupied
+            (view as! BackgroundView).setCurrentShipSquaresTo(true)
+        } else {
+            // Does not matter. Just rotate the frame and update horizontal
+            currentShip?.frame = CGRectMake(currentShip!.frame.origin.x, currentShip!.frame.origin.y, currentShip!.frame.height, currentShip!.frame.width)
+            currentShip?.ship?.horizontal = !((currentShip?.ship?.horizontal)!)
         }
-        
-        //
     }
     
     func selectShip(sender: UIGestureRecognizer) {
+        // Reset the old currentShip's color
         currentShip?.backgroundColor = UIColor.redColor()
         
+        // Set the new currentShip
         currentShip = sender.view as? ShipView
         
+        //Set the new currentShip color
         currentShip?.backgroundColor = UIColor.greenColor()
     }
     
-    
-    
-    
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Get the next myTurnViewController
+        let myTurnGVC = segue.destinationViewController as! MyTurnGameViewController
+        // Set the touchable grid's gridArray
+        myTurnGVC.gridArray = (gameGrid?.gridArray)!
+        
     }
-    */
+ 
 
 }

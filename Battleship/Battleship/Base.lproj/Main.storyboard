@@ -184,6 +184,9 @@
                             <constraint firstItem="056-ZL-cFS" firstAttribute="leading" secondItem="AcR-FM-rjg" secondAttribute="leading" id="yjL-BP-vlL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="touchableGrid" destination="056-ZL-cFS" id="eDd-5J-JSp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRh-hR-GYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

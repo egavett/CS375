@@ -9,16 +9,12 @@
 import UIKit
 
 class GridSquare: UIView {
-    weak var gridPoint: GridPoint?
-    var x: Int = -1
-    var y: Int = -1
+    var gridPoint: GridPoint?
     
-    init(frame: CGRect, gridPoint: GridPoint, x: Int, y: Int) {
+    init(frame: CGRect, gp: GridPoint) {
         super.init(frame: frame)
         
-        self.gridPoint = gridPoint
-        self.x = x
-        self.y = y
+        self.gridPoint = gp
     }
 
     required init?(coder aDecoder: NSCoder) {
