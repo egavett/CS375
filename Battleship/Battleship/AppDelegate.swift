@@ -81,3 +81,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+/// A global structure that will contain the data for the player's data the computer's data during gameplay
+struct GameData {
+    /// The player's grid
+    static var playerGrid = [[GridPoint]]()
+    /// The computer's grid
+    static var computerGrid = [[GridPoint]]()
+    
+    /// The outcome of the game
+    static var playerDidWin: Bool?
+}
+
+/// Custom protocol that allows objects to be deep copied
+protocol Copying {
+    init(original: Self)
+}
+
+extension Copying {
+    func copy() -> Self {
+        return Self.init(original: self)
+    }
+}
+

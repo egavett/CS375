@@ -10,7 +10,7 @@ import UIKit
 
 class TouchableGrid: UIView, UIGestureRecognizerDelegate {
     var selectedsquare: GridSquare?
-    var gridArray = [[GridSquare]]() {
+    var gridArray = [[GridPoint]]() {
         didSet {
             // Update the subviews to reflect the change
             for view in self.subviews {
@@ -19,13 +19,13 @@ class TouchableGrid: UIView, UIGestureRecognizerDelegate {
                 let y = (view as! GridSquare).gridPoint?.y
                 
                 // Set the the appropriate gridPoint
-                (view as! GridSquare).gridPoint = gridArray[x!][y!].gridPoint
+                (view as! GridSquare).gridPoint = gridArray[x!][y!]
             }
             // DEBUG: Update the grid color
-            updateGridColors()
+            //updateGridColors()
         }
     }
-    
+
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
@@ -40,7 +40,7 @@ class TouchableGrid: UIView, UIGestureRecognizerDelegate {
         // Create squares
         for i in 0...9 {
             // Next row to append to the gridArray
-            var nextRow = [GridSquare]()
+            var nextRow = [GridPoint]()
             
             for j in 0...9 {
                 // Create the square
@@ -55,13 +55,13 @@ class TouchableGrid: UIView, UIGestureRecognizerDelegate {
                 
                 // Add the square to the view hierarchy and the gridsquare array
                 self.addSubview(gridSquare)
-                nextRow.append(gridSquare)
+                nextRow.append(gridSquare.gridPoint!)
                 
                 // Increment x
                 x += squareWidth
                 
                 // DEBUG: What is the x/y position
-                print("At position:", i, j)
+                //print("At position:", i, j)
             }
             // Apend the row to the main array
             gridArray.append(nextRow)
@@ -104,7 +104,7 @@ class TouchableGrid: UIView, UIGestureRecognizerDelegate {
     // MARK: Debugging
     func updateGridColors() -> () {
         for gridSquare in self.subviews {
-            if (gridSquare as! GridSquare).gridPoint!.occupied == true{
+            if (gridSquare as! GridSquare).gridPoint!.occupied == true {
                 gridSquare.backgroundColor = UIColor.blueColor()
             } else {
                 gridSquare.backgroundColor = UIColor.whiteColor()

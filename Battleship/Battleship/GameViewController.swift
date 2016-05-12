@@ -16,6 +16,7 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
 //    var gridStart: CGPoint!
     @IBOutlet weak var rotateButton: UIButton!
     @IBOutlet weak var gameGrid: GameGrid!
+    @IBOutlet weak var beginButton: UIButton!
     weak var currentShip: ShipView?
     
     override func viewDidLoad() {
@@ -95,16 +96,58 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
         currentShip?.backgroundColor = UIColor.greenColor()
     }
     
+    func checkShipStatus() -> Bool {
+        // Check through each ship in the background
+        for ship in self.view.subviews {
+            if ship.dynamicType == ShipView.self{
+                if (ship as! ShipView).placed == false {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
+    
     // MARK: - Navigation
+    @IBAction func startGame(sender: AnyObject) {
+        // Only procede if the ships are placed
+        if checkShipStatus() == true {
+            // Store the gameData
+            // Store the player's data
+            GameData.playerGrid = gameGrid.gridArray
+            
+            /// FOR NOW: The computer will use the player's grid
+            var tempArray = [[GridPoint]]()
+            for row in 0..<10 {
+                var nextRow = [GridPoint]()
+                for col in 0..<10 {
+                    nextRow.append(gameGrid.gridArray[row][col].copy())
+                }
+                tempArray.append(nextRow)
+            }
+            GameData.computerGrid = tempArray
+            
+            let mtgvc = MyTurnGameViewController()
+            self.navigationController?.pushViewController(mtgvc, animated: true)
+        }
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the next myTurnViewController
-        let myTurnGVC = segue.destinationViewController as! MyTurnGameViewController
-        // Set the touchable grid's gridArray
-        myTurnGVC.gridArray = (gameGrid?.gridArray)!
+        // Store the gameData
+        // Store the player's data
+        GameData.playerGrid = gameGrid.gridArray
         
+        /// FOR NOW: The computer will use the player's grid
+        var tempArray = [[GridPoint]]()
+        for row in 0..<10 {
+            var nextRow = [GridPoint]()
+            for col in 0..<10 {
+                nextRow.append(gameGrid.gridArray[row][col].copy())
+            }
+            tempArray.append(nextRow)
+        }
+        GameData.computerGrid = tempArray
     }
- 
-
 }

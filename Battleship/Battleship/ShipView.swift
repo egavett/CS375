@@ -11,6 +11,7 @@ import UIKit
 class ShipView: UIView {
 
     var ship: Ship?
+    var placed: Bool = false
     
     /*
     // Only override drawRect: if you perform custom drawing.

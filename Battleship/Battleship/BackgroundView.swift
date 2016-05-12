@@ -63,7 +63,6 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
     }
     
     func shipAt(point: CGPoint) -> ShipView? {
-        //for ship in self.subviews as! Array<ShipView> {
         for ship in self.subviews {
             if ship.dynamicType == ShipView.self{
                 if ship.pointInside(point, withEvent: nil){
@@ -82,6 +81,8 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
                 if (currentShip?.ship?.front != nil) {
                     setCurrentShipSquaresTo(false)
                 }
+                // Set ship's placed to false
+                self.currentShip!.placed = false
             }
         } else if (gr.state == UIGestureRecognizerState.Changed){
             if self.currentShip != nil {
@@ -115,13 +116,14 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
                 
                 // Check if currentShip's position is valid
                 if (isCurrentShipInValidGridPoint(closeGrid.gridPoint!)) {
-                    
-                    
                     // Set currentShip's front
                     currentShip?.ship?.front = closeGrid.gridPoint
                     
                     // Set applicable squares to occupied
                     setCurrentShipSquaresTo(true)
+                    
+                    // Set currentShip's placed to true
+                    self.currentShip!.placed = true
                     
                     // Move currentShip to the closest gridSquare
                     UIView.animateWithDuration(0.3333, animations: {
@@ -133,7 +135,7 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
-    /// Sets all the squares underneath the ship to true or false, based on the condition
+    /// Sets all the squares underneath the ship to true or false, based on horizontal
     func setCurrentShipSquaresTo(bool: Bool) -> () {
         // Get the indexes of the front of the ship, as well as the length
         let xAxis:Int = (currentShip?.ship?.front?.x)!
@@ -145,17 +147,19 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
             // Make sure currentShip is within bounds
             if(xAxis + length <= 10) {
                 for x in 0..<length {
-                    gameGrid?.gridArray[xAxis + x][yAxis].gridPoint?.occupied = bool
+                    gameGrid?.gridArray[xAxis + x][yAxis].occupied = bool
                 }
             }
         } else {
             // Make sure currentShip is within bounds
             if(yAxis + length <= 10) {
                 for y in 0..<length {
-                    gameGrid?.gridArray[xAxis][yAxis + y].gridPoint?.occupied = bool
+                    gameGrid?.gridArray[xAxis][yAxis + y].occupied = bool
                 }
             }
         }
+        // Update gameGrid's subViews
+        gameGrid?.updateGridArray()
         
         // Update the gameGrid colors
         gameGrid?.updateGridColors()
@@ -176,7 +180,7 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
                 if (xAxis + x) > 9 { return false }
                 
                 // If the square is occupied, return false
-                if (gameGrid?.gridArray[xAxis + x][yAxis].gridPoint?.occupied == true){ return false }
+                if (gameGrid?.gridArray[xAxis + x][yAxis].occupied == true){ return false }
             }
         } else {
             // Check every space that the ship covers
@@ -185,7 +189,7 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
                 if (yAxis + y) > 9 { return false }
                 
                 // If the square is occupied, return false
-                if (gameGrid?.gridArray[xAxis][yAxis + y].gridPoint?.occupied == true){ return false }
+                if (gameGrid?.gridArray[xAxis][yAxis + y].occupied == true){ return false }
             }
         }
         

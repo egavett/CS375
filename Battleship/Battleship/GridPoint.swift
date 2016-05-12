@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GridPoint: NSObject {
+class GridPoint: NSObject, Copying {
     var occupied: Bool = false
     var attacked: Bool = false
     var x: Int = -1
@@ -20,16 +20,11 @@ class GridPoint: NSObject {
         self.y = y
     }
     
-    /// Returns true if the point has not been attacked AND the point is occupied
-    func attackPoint() -> Bool {
-        // Check if the square has already been attacked
-        if !attacked {
-            attacked = true
-            // Return point status
-            return occupied
-        } else {
-            // Maybe in future this will throw an exception
-            return false
-        }
+    required init(original: GridPoint) {
+        occupied = original.occupied
+        attacked = original.attacked
+        x = original.x
+        y = original.y
+        
     }
 }
