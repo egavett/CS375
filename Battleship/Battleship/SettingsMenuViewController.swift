@@ -19,22 +19,22 @@ class SettingsMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let currentUser = PFUser.currentUser()
-        
-        let query = PFQuery(className: "gameStats")
-        
-        query.whereKey("user", equalTo: currentUser!)
-        query.getFirstObjectInBackgroundWithBlock( {(stats, error) in
-            if (error != nil) {
-                print(error?.localizedDescription)
-            } else {
-                self.gamesWonLabel.text = (stats?.objectForKey("gamesWon") as? String)
-                self.gamesPlayedLabel.text = (stats?.objectForKey("gamesPlayed") as? String)
-                print("Labels should be updated")
-            }
-            
-            
-        })
+//        let currentUser = PFUser.currentUser()
+//        
+//        let query = PFQuery(className: "gameStats")
+//        
+//        query.whereKey("user", equalTo: currentUser!)
+//        query.getFirstObjectInBackgroundWithBlock( {(stats, error) in
+//            if (error != nil) {
+//                print(error?.localizedDescription)
+//            } else {
+//                self.gamesWonLabel.text = (stats?.objectForKey("gamesWon") as? String)
+//                self.gamesPlayedLabel.text = (stats?.objectForKey("gamesPlayed") as? String)
+//                print("Labels should be updated")
+//            }
+//            
+//            
+//        })
         
         // Do any additional setup after loading the view.
     }

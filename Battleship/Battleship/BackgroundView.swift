@@ -23,8 +23,6 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
         self.panRecognizer?.delegate = self
         self.panRecognizer?.cancelsTouchesInView = false
         self.addGestureRecognizer(panRecognizer!)
-        
-        self.backgroundColor = UIColor.whiteColor()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,8 +33,6 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
         self.panRecognizer?.delegate = self
         self.panRecognizer?.cancelsTouchesInView = false
         self.addGestureRecognizer(panRecognizer!)
-        
-        self.backgroundColor = UIColor.whiteColor()
     }
     
     
@@ -55,7 +51,7 @@ class BackgroundView: UIView, UIGestureRecognizerDelegate {
         let t: UITouch = touches.first!
         let location: CGPoint = t.locationInView(self)
         
-        self.currentShip?.backgroundColor = UIColor.redColor()
+        self.currentShip?.backgroundColor = UIColor.grayColor()
         
         self.currentShip = self.shipAt(location)
         self.currentShip?.backgroundColor = UIColor.greenColor()

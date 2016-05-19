@@ -47,7 +47,7 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             
             // Set appearance properties
-            ship.backgroundColor = UIColor.redColor()
+            ship.backgroundColor = UIColor.grayColor()
             ship.layer.borderColor = UIColor.blackColor().CGColor
             ship.layer.borderWidth = 1.0
             

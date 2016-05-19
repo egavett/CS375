@@ -16,7 +16,7 @@ class GameOverViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         if(GameData.playerDidWin == true) {
-            outcomeLabel.text = "Congratuations, you vanquished the computer!"
+            outcomeLabel.text = "You vanquished the computer!"
         } else {
             outcomeLabel.text = "Sorry. You lost."
         }

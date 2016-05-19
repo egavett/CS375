@@ -31,6 +31,9 @@
 		E64DE6E21C90E8A200BE7F68 /* MyTurnGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64DE6E11C90E8A200BE7F68 /* MyTurnGameViewController.swift */; };
 		E64DE6E41C90E9CE00BE7F68 /* TouchableGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64DE6E31C90E9CE00BE7F68 /* TouchableGrid.swift */; };
 		E65809411C8E167C0053D14E /* GameGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65809401C8E167C0053D14E /* GameGrid.swift */; };
+		E6EA14C11CE90BD60093C498 /* Ship3.png in Resources */ = {isa = PBXBuildFile; fileRef = E6EA14C01CE90BD60093C498 /* Ship3.png */; };
+		E6EA14C31CE914EC0093C498 /* skull.png in Resources */ = {isa = PBXBuildFile; fileRef = E6EA14C21CE914EC0093C498 /* skull.png */; };
+		E6EA14C51CEA4DAA0093C498 /* Burning Ship.png in Resources */ = {isa = PBXBuildFile; fileRef = E6EA14C41CEA4DAA0093C498 /* Burning Ship.png */; };
 		E6F6075E1CB839D500083EBD /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F607561CB839D500083EBD /* ALView+PureLayout.m */; };
 		E6F6075F1CB839D500083EBD /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F607581CB839D500083EBD /* NSArray+PureLayout.m */; };
 		E6F607601CB839D500083EBD /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F6075A1CB839D500083EBD /* NSLayoutConstraint+PureLayout.m */; };
@@ -95,6 +98,9 @@
 		E64DE6E11C90E8A200BE7F68 /* MyTurnGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTurnGameViewController.swift; sourceTree = "<group>"; };
 		E64DE6E31C90E9CE00BE7F68 /* TouchableGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchableGrid.swift; sourceTree = "<group>"; };
 		E65809401C8E167C0053D14E /* GameGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGrid.swift; sourceTree = "<group>"; };
+		E6EA14C01CE90BD60093C498 /* Ship3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ship3.png; path = ../../../../Downloads/Ship3.png; sourceTree = "<group>"; };
+		E6EA14C21CE914EC0093C498 /* skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skull.png; path = ../../../../Downloads/skull.png; sourceTree = "<group>"; };
+		E6EA14C41CEA4DAA0093C498 /* Burning Ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Burning Ship.png"; sourceTree = "<group>"; };
 		E6F607541CB839D400083EBD /* Battleship-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Battleship-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6F607551CB839D500083EBD /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
 		E6F607561CB839D500083EBD /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
@@ -217,6 +223,9 @@
 		295FB6711C83A6B30033D3A4 /* Battleship */ = {
 			isa = PBXGroup;
 			children = (
+				E6EA14C01CE90BD60093C498 /* Ship3.png */,
+				E6EA14C21CE914EC0093C498 /* skull.png */,
+				E6EA14C41CEA4DAA0093C498 /* Burning Ship.png */,
 				2904E5DA1C8CD48B000FDCDD /* Frameworks */,
 				295FB6AF1C83BAA30033D3A4 /* Objects */,
 				2904E5E81C8CD5E4000FDCDD /* Custom Views */,
@@ -380,9 +389,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				295FB67D1C83A6B30033D3A4 /* LaunchScreen.storyboard in Resources */,
+				E6EA14C31CE914EC0093C498 /* skull.png in Resources */,
 				295FB67A1C83A6B30033D3A4 /* Assets.xcassets in Resources */,
 				295FB6781C83A6B30033D3A4 /* Main.storyboard in Resources */,
 				295FB6AB1C83B2810033D3A4 /* FriendsListTableViewCell.xib in Resources */,
+				E6EA14C51CEA4DAA0093C498 /* Burning Ship.png in Resources */,
+				E6EA14C11CE90BD60093C498 /* Ship3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

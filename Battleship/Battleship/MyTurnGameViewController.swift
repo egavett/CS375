@@ -14,6 +14,8 @@ class MyTurnGameViewController: UIViewController {
     @IBOutlet weak var gameGrid: GameGrid!
     @IBOutlet weak var fireButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var yourLabel: UILabel!
+    @IBOutlet weak var opponentLabel: UILabel!
     
     /// Determines what state the game is in. Return 'true' if the player can take thier turn
     var isPlayerTurn: Bool = true
@@ -65,6 +67,8 @@ class MyTurnGameViewController: UIViewController {
             gameGrid.hidden = true
             fireButton.hidden = false
             nextButton.hidden = true
+            yourLabel.hidden = false
+            opponentLabel.hidden = true
             
             // Reenable the button
             fireButton.enabled = true
@@ -74,6 +78,8 @@ class MyTurnGameViewController: UIViewController {
             gameGrid.hidden = false
             fireButton.hidden = true
             nextButton.hidden = false
+            yourLabel.hidden = true
+            opponentLabel.hidden = false
             
             // It is the computer's turn. Call the appropriate method
             computerWillFire()
@@ -81,47 +87,47 @@ class MyTurnGameViewController: UIViewController {
     }
     
     @IBAction func playerWillFire(sender: AnyObject) {
-        // Get the selected girdSquare
-        let selectedSquare: GridSquare = touchableGrid.selectedsquare!
+        // Get the selected girdSquare, if it exists
+        if (touchableGrid.selectedsquare != nil){
+            let selectedSquare: GridSquare = touchableGrid.selectedsquare!
         
-        // Only fire if gridSquare as not beed attacked yet
-        if (selectedSquare.gridPoint?.attacked == false) {
-            // Update the attacked property
-            selectedSquare.gridPoint?.attacked = true
+            // Only fire if gridSquare as not beed attacked yet
+            if (selectedSquare.gridPoint?.attacked == false) {
+                // Update the attacked property
+                selectedSquare.gridPoint?.attacked = true
             
-            // Update the square color based on occupied status
-            if (selectedSquare.gridPoint?.occupied == true) {
-                selectedSquare.backgroundColor = UIColor.greenColor()
+                // Update the square color based on occupied status
+                if (selectedSquare.gridPoint?.occupied == true) {
+                    selectedSquare.backgroundColor = UIColor.greenColor()
                 
-                // Update the player's score
-                playerScore += 1
-            } else {
-                selectedSquare.backgroundColor = UIColor.redColor()
-            }
+                    // Update the player's score
+                    playerScore += 1
+                } else {
+                    selectedSquare.backgroundColor = UIColor.redColor()
+                }
             
-            // Disable fireButton
-            fireButton.enabled = false
+                // Disable fireButton
+                fireButton.enabled = false
             
-            // Wait 1 second, then set isPlayerTurn to false
-            delay(1.0, closure: {
-                self.isPlayerTurn = false
-                self.updateViews()
-            })
-            
-            
-        } else  {
-            // Get UIView's currentColor
-            let currentColor = selectedSquare.backgroundColor
-            
-            // Flash yellow to show that they already fired here
-            UIView.animateWithDuration(0.25, animations: {
-                selectedSquare.backgroundColor = UIColor.yellowColor()
-                }, completion: { finished in
-                    UIView.animateWithDuration(0.25, animations: {
-                        selectedSquare.backgroundColor = currentColor
-                    })
-            
+                // Wait 1 second, then set isPlayerTurn to false
+                delay(1.0, closure: {
+                    self.isPlayerTurn = false
+                    self.updateViews()
                 })
+            
+            } else  {
+                // Get UIView's currentColor
+                let currentColor = selectedSquare.backgroundColor
+            
+                // Flash yellow to show that they already fired here
+                UIView.animateWithDuration(0.25, animations: {
+                    selectedSquare.backgroundColor = UIColor.yellowColor()
+                    }, completion: { finished in
+                        UIView.animateWithDuration(0.25, animations: {
+                            selectedSquare.backgroundColor = currentColor
+                        })
+                    })
+            }
         }
     }
 

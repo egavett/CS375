@@ -59,9 +59,9 @@ class GameGrid: UIView {
                 let gridSquare = GridSquare(frame: CGRectMake(x, y, cellWidth, cellHeight), gp: point)
                 
                 // Set the display properties
-                gridSquare.backgroundColor = UIColor.whiteColor()
+                gridSquare.backgroundColor = UIColor.blueColor()
                 gridSquare.layer.borderWidth = 1.0
-                gridSquare.layer.borderColor = UIColor.blackColor().CGColor
+                gridSquare.layer.borderColor = UIColor.darkGrayColor().CGColor
                 
                 
                 // Add the square to the view hierarchy and the gridsquare array
@@ -101,6 +101,12 @@ class GameGrid: UIView {
     func updateGridColors() -> () {
         // Enumerate through each view
         for gridSquare in self.subviews {
+            // Yellow border for occupied squres
+            if(gridSquare as! GridSquare).gridPoint?.occupied == true {
+                gridSquare.layer.borderColor = UIColor.yellowColor().CGColor
+            } else {
+                gridSquare.layer.borderColor = UIColor.grayColor().CGColor
+            }
             
             // If the square has been attacked...
             if (gridSquare as! GridSquare).gridPoint?.attacked == true {
@@ -111,8 +117,8 @@ class GameGrid: UIView {
                     gridSquare.backgroundColor = UIColor.redColor()
                 }
             } else  {
-                // Otherwise, set the color to white
-                gridSquare.backgroundColor = UIColor.whiteColor()
+                // Otherwise, set the color to blue
+                gridSquare.backgroundColor = UIColor.blueColor()
             }
             
         }

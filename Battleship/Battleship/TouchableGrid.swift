@@ -48,7 +48,7 @@ class TouchableGrid: UIView, UIGestureRecognizerDelegate {
                 let gridSquare = GridSquare(frame: CGRectMake(x, y, squareWidth, squareHeight), gp: point)
                 
                 // Set the display properties
-                gridSquare.backgroundColor = UIColor.whiteColor()
+                gridSquare.backgroundColor = UIColor.blueColor()
                 gridSquare.layer.borderWidth = 1.0
                 gridSquare.layer.borderColor = UIColor.blackColor().CGColor
                 
